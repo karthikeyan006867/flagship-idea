@@ -10,7 +10,7 @@ import InstitutionalDashboard from '@components/pages/InstitutionalDashboard'
 import LoadingScreen from '@components/ui/LoadingScreen'
 
 function App() {
-  const { isLoading, isAuthenticated } = useAuth0()
+  const { isLoading } = useAuth0()
 
   if (isLoading) {
     return <LoadingScreen />

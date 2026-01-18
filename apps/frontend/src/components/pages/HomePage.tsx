@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { TrendingUp, Users, Target, Brain, ArrowUpRight, ArrowDownRight } from 'lucide-react'
+import { TrendingUp, Users, Target, Brain } from 'lucide-react'
 import StatCard from '@components/ui/StatCard'
 import DecisionHeatmap from '@components/visualizations/DecisionHeatmap'
 import OutcomeTrendChart from '@components/visualizations/OutcomeTrendChart'

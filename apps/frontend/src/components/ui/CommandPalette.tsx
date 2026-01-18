@@ -4,7 +4,6 @@ import { Command } from 'lucide-react'
 
 export default function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false)
-  const navigate = useNavigate()
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

@@ -13,8 +13,13 @@
     "dev:frontend": "npm run dev --workspace=apps/frontend",
     "dev:backend": "npm run dev --workspace=apps/backend",
     "build": "npm run build --workspaces",
+    "build:frontend": "npm run build --workspace=apps/frontend",
+    "build:backend": "npm run build --workspace=apps/backend",
     "lint": "npm run lint --workspaces",
-    "test": "npm run test --workspaces"
+    "test": "npm run test --workspaces",
+    "deploy": "node -e \"console.log('Run: .\\\\deploy-vercel.ps1')\"",
+    "deploy:frontend": "cd apps/frontend && vercel --prod",
+    "deploy:backend": "cd apps/backend && vercel --prod"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
