@@ -1,7 +1,7 @@
-import { NestFactory } from '@nestjs/core';
-import { ValidationPipe } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { AppModule } from './app.module';
+import { NestFactory } from "@nestjs/core";
+import { ValidationPipe } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
+import { AppModule } from "./app.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -18,14 +18,16 @@ async function bootstrap() {
 
   // CORS configuration
   app.enableCors({
-    origin: configService.get('ALLOWED_ORIGINS')?.split(',') || ['http://localhost:3000'],
+    origin: configService.get("ALLOWED_ORIGINS")?.split(",") || [
+      "http://localhost:3000",
+    ],
     credentials: true,
   });
 
   // Global prefix
-  app.setGlobalPrefix('api');
+  app.setGlobalPrefix("api");
 
-  const port = configService.get('API_PORT') || 4000;
+  const port = configService.get("API_PORT") || 4000;
   await app.listen(port);
 
   console.log(`🚀 HDIP Backend Server running on http://localhost:${port}`);

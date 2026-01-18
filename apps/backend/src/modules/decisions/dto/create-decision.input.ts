@@ -1,6 +1,6 @@
-import { InputType, Field, Int } from '@nestjs/graphql';
-import { IsNotEmpty, IsEnum, IsInt, Min, Max, IsArray } from 'class-validator';
-import { DecisionCategory } from '../entities/decision.entity';
+import { InputType, Field, Int } from "@nestjs/graphql";
+import { IsNotEmpty, IsEnum, IsInt, Min, Max, IsArray } from "class-validator";
+import { DecisionCategory } from "../entities/decision.entity";
 
 @InputType()
 export class CreateDecisionInput {

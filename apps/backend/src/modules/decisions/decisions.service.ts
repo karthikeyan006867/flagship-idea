@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { Decision } from './entities/decision.entity';
-import { CreateDecisionInput } from './dto/create-decision.input';
-import { UpdateDecisionInput } from './dto/update-decision.input';
+import { Injectable } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+import { Decision } from "./entities/decision.entity";
+import { CreateDecisionInput } from "./dto/create-decision.input";
+import { UpdateDecisionInput } from "./dto/update-decision.input";
 
 @Injectable()
 export class DecisionsService {
@@ -19,15 +19,15 @@ export class DecisionsService {
 
   async findAll(): Promise<Decision[]> {
     return this.decisionsRepository.find({
-      relations: ['user', 'outcomes'],
-      order: { createdAt: 'DESC' },
+      relations: ["user", "outcomes"],
+      order: { createdAt: "DESC" },
     });
   }
 
   async findOne(id: string): Promise<Decision> {
     return this.decisionsRepository.findOne({
       where: { id },
-      relations: ['user', 'outcomes'],
+      relations: ["user", "outcomes"],
     });
   }
 
@@ -47,8 +47,8 @@ export class DecisionsService {
   async findByUser(userId: string): Promise<Decision[]> {
     return this.decisionsRepository.find({
       where: { userId },
-      relations: ['outcomes'],
-      order: { createdAt: 'DESC' },
+      relations: ["outcomes"],
+      order: { createdAt: "DESC" },
     });
   }
 }
