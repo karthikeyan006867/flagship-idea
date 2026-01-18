@@ -16,6 +16,8 @@ export enum DecisionCategory {
   BUSINESS = "business",
   POLICY = "policy",
   PERSONAL = "personal",
+  FINANCIAL = "financial",
+  HEALTH = "health",
 }
 
 @ObjectType()
@@ -57,13 +59,13 @@ export class Decision {
   @Column()
   userId: string;
 
-  @Field(() => User)
-  @ManyToOne(() => User, (user) => user.decisions)
-  user: User;
+  @Field(() => User, { nullable: true })
+  @ManyToOne(() => User, (user) => user.decisions, { nullable: true })
+  user?: User;
 
   @Field(() => [Outcome], { nullable: true })
-  @OneToMany(() => Outcome, (outcome) => outcome.decision)
-  outcomes: Outcome[];
+  @OneToMany(() => Outcome, (outcome) => outcome.decision, { nullable: true })
+  outcomes?: Outcome[];
 
   @Field()
   @CreateDateColumn()

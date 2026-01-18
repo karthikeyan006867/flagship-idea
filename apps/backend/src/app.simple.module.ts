@@ -18,14 +18,6 @@ import { AnalyticsModule } from './modules/analytics/analytics.module';
       autoSchemaFile: true,
       playground: true,
       introspection: true,
-      cors: {
-        origin: [
-          'http://localhost:3000',
-          'https://hdip-platform.vercel.app',
-          'https://hdip-platform-hvpkcp8e7-karthikeyan006867s-projects.vercel.app'
-        ],
-        credentials: true,
-      },
     }),
     DecisionsModule,
     OutcomesModule,

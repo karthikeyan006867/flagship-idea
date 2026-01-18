@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateDecisionInput } from './dto/create-decision.input';
 import { UpdateDecisionInput } from './dto/update-decision.input';
-import { Decision } from './entities/decision.entity';
+import { Decision, DecisionCategory } from './entities/decision.entity';
 
 // In-memory storage - sample data
 const decisionsStore: Decision[] = [
@@ -9,56 +9,56 @@ const decisionsStore: Decision[] = [
     id: '1',
     title: 'Transition to Remote Work Model',
     description: 'Evaluating the decision to move our entire team to a remote-first working model',
-    category: 'CAREER',
+    category: DecisionCategory.CAREER,
     context: {
       age: 32,
       location: 'San Francisco, CA',
       economicCondition: 'stable'
     },
     confidence: 85,
-    riskLevel: 35,
+    risk: 35,
     alternatives: ['Hybrid model (3 days office)', 'Stay fully in-office', 'Flexible per team'],
     outcomes: [],
     userId: 'demo-user',
     createdAt: new Date('2024-01-15'),
     updatedAt: new Date('2024-01-15')
-  },
+  } as Decision,
   {
     id: '2',
     title: 'Cryptocurrency Investment Strategy',
     description: 'Deciding whether to allocate 15% of savings into cryptocurrency portfolio',
-    category: 'FINANCIAL',
+    category: DecisionCategory.FINANCIAL,
     context: {
       age: 28,
       location: 'New York, NY',
       economicCondition: 'volatile'
     },
     confidence: 60,
-    riskLevel: 85,
+    risk: 85,
     alternatives: ['Traditional index funds', 'Real estate investment', 'High-yield savings'],
     outcomes: [],
     userId: 'demo-user',
     createdAt: new Date('2024-02-10'),
     updatedAt: new Date('2024-02-10')
-  },
+  } as Decision,
   {
     id: '3',
     title: 'Career Pivot to AI/ML Engineering',
     description: 'Considering a career change from full-stack development to AI/ML specialization',
-    category: 'CAREER',
+    category: DecisionCategory.CAREER,
     context: {
       age: 35,
       location: 'Austin, TX',
       economicCondition: 'growing'
     },
     confidence: 70,
-    riskLevel: 55,
+    risk: 55,
     alternatives: ['Stay in current role', 'Pursue hybrid role', 'Part-time upskilling first'],
     outcomes: [],
     userId: 'demo-user',
     createdAt: new Date('2024-03-05'),
     updatedAt: new Date('2024-03-05')
-  }
+  } as Decision
 ];
 
 @Injectable()
@@ -125,7 +125,7 @@ export class DecisionsService {
       total: decisions.length,
       byCategory,
       avgConfidence: decisions.reduce((sum, d) => sum + d.confidence, 0) / decisions.length || 0,
-      avgRisk: decisions.reduce((sum, d) => sum + d.riskLevel, 0) / decisions.length || 0,
+      avgRisk: decisions.reduce((sum, d) => sum + d.risk, 0) / decisions.length || 0,
     };
   }
 }
