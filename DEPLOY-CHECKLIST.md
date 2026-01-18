@@ -3,6 +3,7 @@
 ## Before Deploying
 
 ### ✅ Prerequisites
+
 - [x] Code committed to Git
 - [ ] Dependencies installed (`npm install`)
 - [ ] Environment variables configured
@@ -13,6 +14,7 @@
 ### ✅ Environment Setup
 
 **Frontend (.env.production)**
+
 - [ ] VITE_GRAPHQL_ENDPOINT
 - [ ] VITE_API_BASE_URL
 - [ ] VITE_AUTH0_DOMAIN
@@ -20,6 +22,7 @@
 - [ ] VITE_MAPBOX_TOKEN
 
 **Backend (.env.production)**
+
 - [ ] DATABASE_URL (Production database)
 - [ ] NODE_ENV=production
 - [ ] JWT_SECRET
@@ -31,11 +34,13 @@
 ## Deployment Options
 
 ### Option 1: Automated Script (Easiest)
+
 ```powershell
 .\deploy-vercel.ps1
 ```
 
 ### Option 2: Manual CLI
+
 ```powershell
 # Frontend
 cd apps/frontend
@@ -49,6 +54,7 @@ vercel --prod
 ```
 
 ### Option 3: GitHub Integration
+
 1. Push to GitHub: `git push origin main`
 2. Import in Vercel dashboard
 3. Configure build settings
@@ -59,6 +65,7 @@ vercel --prod
 ## Post-Deployment
 
 ### ✅ Verify Frontend
+
 - [ ] Visit deployed URL
 - [ ] Check all pages load
 - [ ] Verify styles applied
@@ -66,12 +73,14 @@ vercel --prod
 - [ ] Check console for errors
 
 ### ✅ Verify Backend
+
 - [ ] API responds at /graphql
 - [ ] GraphQL playground works
 - [ ] Database connected
 - [ ] Test queries/mutations
 
 ### ✅ Integration Tests
+
 - [ ] Frontend connects to backend
 - [ ] Auth flow works
 - [ ] API calls succeed
@@ -107,6 +116,7 @@ vercel logs [deployment-url]
 ## Troubleshooting
 
 **Build fails:**
+
 ```powershell
 rm -rf node_modules dist
 npm install
@@ -114,14 +124,17 @@ npm run build
 ```
 
 **Environment variables not loading:**
+
 - Add in Vercel dashboard under Settings → Environment Variables
 - Redeploy after adding
 
 **CORS errors:**
+
 - Update backend CORS to include frontend URL
 - Check environment variable URLs match
 
 **Database connection fails:**
+
 - Verify DATABASE_URL is correct
 - Check database allows external connections
 - Enable SSL if required

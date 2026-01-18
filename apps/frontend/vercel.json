@@ -3,5 +3,8 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": "vite",
-  "devCommand": "npm run dev"
+  "devCommand": "npm run dev",
+  "env": {
+    "VITE_GRAPHQL_ENDPOINT": "https://backend-nine-gamma-74.vercel.app/graphql"
+  }
 }

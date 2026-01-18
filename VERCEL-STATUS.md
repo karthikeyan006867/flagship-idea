@@ -3,6 +3,7 @@
 ## 🚀 Deployment Information
 
 ### Vercel Token
+
 ```
 khBdSXycxsTQULTcTOu3olGN
 ```
@@ -10,23 +11,27 @@ khBdSXycxsTQULTcTOu3olGN
 ### Quick Deploy Commands
 
 **Install Vercel CLI:**
+
 ```powershell
 npm install -g vercel
 ```
 
 **Deploy Frontend:**
+
 ```powershell
 cd apps/frontend
 vercel --prod --token khBdSXycxsTQULTcTOu3olGN
 ```
 
 **Deploy Backend:**
+
 ```powershell
 cd apps/backend
 vercel --prod --token khBdSXycxsTQULTcTOu3olGN
 ```
 
 **Or use the automated script:**
+
 ```powershell
 .\deploy-vercel.ps1
 ```
@@ -36,12 +41,14 @@ vercel --prod --token khBdSXycxsTQULTcTOu3olGN
 ## 📋 Pre-Deployment Checklist
 
 ### ✅ Code Quality
+
 - [x] TypeScript errors fixed
 - [x] Build configuration optimized
 - [x] Environment variables configured
 - [x] Deployment scripts created
 
 ### ✅ Files Created
+
 - [x] `vercel.json` - Vercel configuration
 - [x] `deploy-vercel.ps1` - Automated deployment script
 - [x] `DEPLOYMENT.md` - Comprehensive deployment guide
@@ -50,6 +57,7 @@ vercel --prod --token khBdSXycxsTQULTcTOu3olGN
 - [x] `vite-env.d.ts` - TypeScript environment types
 
 ### ✅ Configuration
+
 - [x] Frontend Vercel config
 - [x] Backend TypeScript fixed
 - [x] Build optimization enabled
@@ -60,17 +68,20 @@ vercel --prod --token khBdSXycxsTQULTcTOu3olGN
 ## 🔧 What Was Fixed
 
 ### Backend Issues
+
 1. ✅ Fixed TypeScript `strictNullChecks` error
 2. ✅ Optimized build configuration
 3. ✅ Added production environment setup
 
 ### Frontend Issues
+
 1. ✅ Added Vite environment types
 2. ✅ Fixed build configuration
 3. ✅ Optimized production settings
 4. ✅ CSS warnings are normal (Tailwind)
 
 ### Deployment Setup
+
 1. ✅ Created Vercel configurations
 2. ✅ Added automated deployment script
 3. ✅ Set up GitHub Actions workflow
@@ -81,18 +92,21 @@ vercel --prod --token khBdSXycxsTQULTcTOu3olGN
 ## 🎯 Next Steps
 
 ### Option 1: Automated Deployment (Recommended)
+
 ```powershell
 # Run this command:
 .\deploy-vercel.ps1
 ```
 
 This script will:
+
 1. Check for Vercel CLI
 2. Build your projects
 3. Deploy to Vercel
 4. Provide deployment URLs
 
 ### Option 2: Manual Deployment
+
 ```powershell
 # Install dependencies first
 npm install
@@ -113,7 +127,9 @@ vercel --prod
 ```
 
 ### Option 3: GitHub Integration
+
 1. Push code to GitHub:
+
    ```powershell
    git add .
    git commit -m "Ready for deployment"
@@ -131,21 +147,26 @@ vercel --prod
 ## 🌐 After Deployment
 
 ### Frontend URL
+
 You'll receive a URL like: `https://your-app.vercel.app`
 
 ### Backend URL
+
 You'll receive a URL like: `https://your-api.vercel.app`
 
 ### Update Environment Variables
+
 After deployment, update these in Vercel dashboard:
 
 **Frontend:**
+
 - `VITE_GRAPHQL_ENDPOINT` → Your backend GraphQL URL
 - `VITE_API_BASE_URL` → Your backend API URL
 - `VITE_AUTH0_DOMAIN` → Your Auth0 domain
 - `VITE_AUTH0_CLIENT_ID` → Your Auth0 client ID
 
 **Backend:**
+
 - `DATABASE_URL` → Your production database URL
 - `NODE_ENV` → `production`
 - `AUTH0_CLIENT_SECRET` → Your Auth0 secret
@@ -167,6 +188,7 @@ After deployment, update these in Vercel dashboard:
 **Status:** ✅ Ready to Deploy!
 
 **What's Ready:**
+
 - ✅ Code is clean and error-free
 - ✅ Build configurations optimized
 - ✅ Deployment scripts created
@@ -198,6 +220,7 @@ Simply run: `.\deploy-vercel.ps1`
    - Add frontend URL to allowed origins
 
 **Still stuck?**
+
 - Check [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions
 - Review Vercel logs: `vercel logs`
 - Visit: https://vercel.com/docs

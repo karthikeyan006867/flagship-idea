@@ -56,6 +56,7 @@ CREATE DATABASE hdip_development;
 ```
 
 Update your `.env` file:
+
 ```env
 DATABASE_URL=postgresql://postgres:password@localhost:5432/hdip_development
 ```
@@ -74,6 +75,7 @@ npm run dev:backend     # Backend on http://localhost:4000
 ## 🎨 Frontend Development
 
 ### Tech Stack
+
 - **React 18** with TypeScript
 - **Vite** for blazing fast builds
 - **Tailwind CSS** for styling
@@ -83,6 +85,7 @@ npm run dev:backend     # Backend on http://localhost:4000
 - **Auth0** for authentication
 
 ### Key Features Implemented
+
 ✅ Enterprise dark mode design system
 ✅ Command-center dashboard layout
 ✅ Glassmorphism UI components
@@ -92,11 +95,13 @@ npm run dev:backend     # Backend on http://localhost:4000
 ✅ Loading screens and animations
 
 ### Typography System
+
 - **Headings**: IBM Plex Sans
 - **Body**: Inter
 - **Code/Data**: JetBrains Mono
 
 ### Color Palette
+
 - **Primary**: Blue (#0069FF)
 - **Backgrounds**: Dark grays (#0A0E1A, #0F1420)
 - **Accents**: Blue, Purple, Cyan, Green, Amber, Red
@@ -122,6 +127,7 @@ npm run preview
 ## 🔧 Backend Development
 
 ### Tech Stack
+
 - **NestJS** framework
 - **GraphQL** API with Apollo
 - **TypeORM** for database
@@ -130,6 +136,7 @@ npm run preview
 - **Class Validator** for input validation
 
 ### Modules Implemented
+
 ✅ Decisions Module (CRUD operations)
 ✅ Outcomes Module (tracking results)
 ✅ Users Module (user management)
@@ -139,15 +146,18 @@ npm run preview
 ### Database Schema
 
 **Users Table**
+
 - id, email, name, passwordHash, role, profile
 - Roles: user, researcher, admin, government, corporate
 
 **Decisions Table**
+
 - id, title, category, description, confidence, risk
 - alternatives, context (JSONB)
 - Relations: user, outcomes
 
 **Outcomes Table**
+
 - id, decisionId, status, satisfactionScore
 - description, milestones, metrics (JSONB)
 - recordedAt, createdAt, updatedAt
@@ -157,6 +167,7 @@ npm run preview
 Access GraphQL Playground at: `http://localhost:4000/graphql`
 
 **Queries:**
+
 ```graphql
 query {
   decisions {
@@ -182,16 +193,19 @@ query {
 ```
 
 **Mutations:**
+
 ```graphql
 mutation {
-  createDecision(createDecisionInput: {
-    title: "Career Change"
-    category: CAREER
-    description: "Switching to product management"
-    confidence: 75
-    risk: 40
-    userId: "user-uuid"
-  }) {
+  createDecision(
+    createDecisionInput: {
+      title: "Career Change"
+      category: CAREER
+      description: "Switching to product management"
+      confidence: 75
+      risk: 40
+      userId: "user-uuid"
+    }
+  ) {
     id
     title
   }
@@ -286,6 +300,7 @@ npm run build --workspace=apps/backend
 ## 🎯 Next Steps
 
 ### Phase 1: Core Features (Current)
+
 ✅ Project setup and configuration
 ✅ Design system implementation
 ✅ Basic UI components and layout
@@ -293,6 +308,7 @@ npm run build --workspace=apps/backend
 ✅ GraphQL API foundation
 
 ### Phase 2: Advanced Features
+
 - [ ] Complete decision capture workflow
 - [ ] Timeline visualization with D3.js
 - [ ] Comparative intelligence analytics
@@ -300,6 +316,7 @@ npm run build --workspace=apps/backend
 - [ ] Institutional dashboards
 
 ### Phase 3: Data & Analytics
+
 - [ ] BigQuery integration for analytics
 - [ ] ElasticSearch for fast querying
 - [ ] Real-time updates with Redis
@@ -307,6 +324,7 @@ npm run build --workspace=apps/backend
 - [ ] Export and reporting features
 
 ### Phase 4: Enterprise Features
+
 - [ ] Multi-tenant architecture
 - [ ] Role-based access control
 - [ ] Audit logging system
@@ -319,6 +337,7 @@ npm run build --workspace=apps/backend
 ### Common Issues
 
 **Port already in use:**
+
 ```bash
 # Kill process on port 3000 or 4000
 npx kill-port 3000
@@ -326,11 +345,13 @@ npx kill-port 4000
 ```
 
 **Database connection error:**
+
 - Ensure PostgreSQL is running
 - Check DATABASE_URL in .env
 - Verify database exists
 
 **Module not found:**
+
 ```bash
 # Clear node_modules and reinstall
 rm -rf node_modules

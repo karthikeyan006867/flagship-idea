@@ -3,6 +3,7 @@
 ## Vercel Deployment
 
 ### Prerequisites
+
 - Vercel account (https://vercel.com)
 - Vercel CLI installed: `npm i -g vercel`
 - Vercel token: `khBdSXycxsTQULTcTOu3olGN`
@@ -10,6 +11,7 @@
 ### Option 1: Deploy via CLI
 
 #### 1. Login to Vercel
+
 ```powershell
 # Set your Vercel token
 $env:VERCEL_TOKEN="khBdSXycxsTQULTcTOu3olGN"
@@ -19,6 +21,7 @@ vercel login
 ```
 
 #### 2. Deploy Frontend
+
 ```powershell
 cd apps/frontend
 
@@ -30,6 +33,7 @@ vercel --prod
 ```
 
 #### 3. Deploy Backend (Separate)
+
 ```powershell
 cd apps/backend
 
@@ -40,6 +44,7 @@ vercel --prod
 ### Option 2: Deploy via GitHub Integration
 
 #### 1. Push to GitHub
+
 ```powershell
 git init
 git add .
@@ -50,6 +55,7 @@ git push -u origin main
 ```
 
 #### 2. Connect to Vercel
+
 1. Go to https://vercel.com/new
 2. Import your GitHub repository
 3. Select the `apps/frontend` directory as the root
@@ -60,7 +66,9 @@ git push -u origin main
    - **Install Command**: `npm install`
 
 #### 3. Configure Environment Variables
+
 Add these in Vercel dashboard:
+
 ```
 VITE_GRAPHQL_ENDPOINT=https://your-backend.vercel.app/graphql
 VITE_API_BASE_URL=https://your-backend.vercel.app/api
@@ -80,6 +88,7 @@ VITE_AUTH0_CLIENT_ID=your_client_id
 ## Environment Configuration
 
 ### Frontend (.env.production)
+
 ```env
 VITE_GRAPHQL_ENDPOINT=https://your-api.vercel.app/graphql
 VITE_API_BASE_URL=https://your-api.vercel.app/api
@@ -89,6 +98,7 @@ VITE_MAPBOX_TOKEN=pk.your_token
 ```
 
 ### Backend (.env.production)
+
 ```env
 NODE_ENV=production
 DATABASE_URL=your_production_database_url
@@ -103,9 +113,11 @@ STRIPE_SECRET_KEY=sk_live_your_key
 ## Backend Deployment Options
 
 ### Option A: Vercel Serverless (Recommended for API)
+
 The backend is configured to deploy as serverless functions on Vercel.
 
 ### Option B: Railway (for NestJS + PostgreSQL)
+
 1. Sign up at https://railway.app
 2. Create new project
 3. Deploy from GitHub
@@ -113,6 +125,7 @@ The backend is configured to deploy as serverless functions on Vercel.
 5. Set environment variables
 
 ### Option C: Render (Full Backend)
+
 1. Sign up at https://render.com
 2. New Web Service
 3. Connect GitHub repo
@@ -121,6 +134,7 @@ The backend is configured to deploy as serverless functions on Vercel.
 6. Add PostgreSQL database
 
 ### Option D: Heroku
+
 ```powershell
 heroku create hdip-backend
 heroku addons:create heroku-postgresql:hobby-dev
@@ -132,17 +146,20 @@ git subtree push --prefix apps/backend heroku main
 ## Database Setup (Production)
 
 ### Option 1: Vercel Postgres
+
 ```powershell
 vercel env add DATABASE_URL
 # Paste your connection string
 ```
 
 ### Option 2: Supabase (Recommended)
+
 1. Create project at https://supabase.com
 2. Get connection string
 3. Add to Vercel environment variables
 
 ### Option 3: Railway Postgres
+
 1. Add PostgreSQL to Railway project
 2. Copy DATABASE_URL
 3. Set in environment variables
@@ -152,6 +169,7 @@ vercel env add DATABASE_URL
 ## Post-Deployment Checklist
 
 ### ✅ Frontend
+
 - [ ] Site loads at Vercel URL
 - [ ] All pages render correctly
 - [ ] Styles are applied (Tailwind)
@@ -159,6 +177,7 @@ vercel env add DATABASE_URL
 - [ ] Environment variables loaded
 
 ### ✅ Backend
+
 - [ ] API responds at /graphql
 - [ ] Database connected
 - [ ] GraphQL playground works
@@ -166,6 +185,7 @@ vercel env add DATABASE_URL
 - [ ] Environment variables set
 
 ### ✅ Integration
+
 - [ ] Frontend can call backend API
 - [ ] Auth0 authentication works
 - [ ] Database queries succeed
@@ -176,6 +196,7 @@ vercel env add DATABASE_URL
 ## Troubleshooting
 
 ### Build Fails
+
 ```powershell
 # Clear cache and rebuild
 rm -rf node_modules dist
@@ -184,20 +205,24 @@ npm run build
 ```
 
 ### Environment Variables Not Loading
+
 - Check variable names match exactly
-- Ensure VITE_ prefix for frontend variables
+- Ensure VITE\_ prefix for frontend variables
 - Redeploy after adding variables
 
 ### CORS Errors
+
 Update backend CORS configuration:
+
 ```typescript
 app.enableCors({
-  origin: ['https://your-frontend.vercel.app'],
+  origin: ["https://your-frontend.vercel.app"],
   credentials: true,
 });
 ```
 
 ### Database Connection Issues
+
 - Verify DATABASE_URL is correct
 - Check if database allows external connections
 - Ensure SSL is enabled if required
@@ -207,13 +232,16 @@ app.enableCors({
 ## Custom Domain Setup
 
 ### 1. Add Domain in Vercel
+
 1. Go to project settings
 2. Click "Domains"
 3. Add your custom domain
 4. Follow DNS configuration instructions
 
 ### 2. Update Environment Variables
+
 Update API URLs to use custom domain:
+
 ```env
 VITE_GRAPHQL_ENDPOINT=https://api.yourdomain.com/graphql
 ```
@@ -223,17 +251,21 @@ VITE_GRAPHQL_ENDPOINT=https://api.yourdomain.com/graphql
 ## Monitoring & Analytics
 
 ### Vercel Analytics
+
 Enable in project settings for:
+
 - Page views
 - Performance metrics
 - User analytics
 
 ### Error Tracking (Sentry)
+
 ```powershell
 npm install @sentry/react @sentry/node
 ```
 
 Add to main.tsx:
+
 ```typescript
 import * as Sentry from "@sentry/react";
 
@@ -248,11 +280,14 @@ Sentry.init({
 ## CI/CD Pipeline
 
 ### Automatic Deployments
+
 Vercel automatically deploys on:
+
 - Push to `main` branch → Production
 - Pull requests → Preview deployments
 
 ### Manual Deployment
+
 ```powershell
 # Preview deployment
 vercel
@@ -266,12 +301,14 @@ vercel --prod
 ## Performance Optimization
 
 ### Frontend
+
 - Build with production config
 - Enable compression
 - Optimize images
 - Code splitting enabled
 
 ### Backend
+
 - Use connection pooling
 - Enable Redis caching
 - Optimize database queries
