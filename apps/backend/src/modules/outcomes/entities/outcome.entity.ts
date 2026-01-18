@@ -28,9 +28,9 @@ export class Outcome {
   @Column()
   decisionId: string;
 
-  @Field(() => Decision)
-  @ManyToOne(() => Decision, (decision) => decision.outcomes)
-  decision: Decision;
+  @Field(() => Decision, { nullable: true })
+  @ManyToOne(() => Decision, (decision) => decision.outcomes, { nullable: true })
+  decision?: Decision;
 
   @Field(() => String)
   @Column({ type: "enum", enum: OutcomeStatus })
