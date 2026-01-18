@@ -11,8 +11,10 @@ export default function TimelineView() {
       </div>
 
       <div className="glass p-8 rounded-xl">
-        <p className="text-text-secondary">Timeline visualization coming soon...</p>
+        <p className="text-text-secondary">
+          Timeline visualization coming soon...
+        </p>
       </div>
     </div>
-  )
+  );
 }

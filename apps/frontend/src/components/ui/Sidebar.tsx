@@ -1,23 +1,23 @@
-import { NavLink } from 'react-router-dom'
-import { 
-  LayoutDashboard, 
-  Target, 
-  TrendingUp, 
-  GitCompare, 
+import { NavLink } from "react-router-dom";
+import {
+  LayoutDashboard,
+  Target,
+  TrendingUp,
+  GitCompare,
   Sparkles,
   Building2,
-  Settings
-} from 'lucide-react'
-import { cn } from '@lib/utils'
+  Settings,
+} from "lucide-react";
+import { cn } from "@lib/utils";
 
 const navigation = [
-  { name: 'Overview', href: '/', icon: LayoutDashboard },
-  { name: 'Decision Capture', href: '/capture', icon: Target },
-  { name: 'Timeline View', href: '/timeline', icon: TrendingUp },
-  { name: 'Compare', href: '/compare', icon: GitCompare },
-  { name: 'Simulation Lab', href: '/simulate', icon: Sparkles },
-  { name: 'Institutional', href: '/dashboard/government', icon: Building2 },
-]
+  { name: "Overview", href: "/", icon: LayoutDashboard },
+  { name: "Decision Capture", href: "/capture", icon: Target },
+  { name: "Timeline View", href: "/timeline", icon: TrendingUp },
+  { name: "Compare", href: "/compare", icon: GitCompare },
+  { name: "Simulation Lab", href: "/simulate", icon: Sparkles },
+  { name: "Institutional", href: "/dashboard/government", icon: Building2 },
+];
 
 export default function Sidebar() {
   return (
@@ -38,16 +38,18 @@ export default function Sidebar() {
             to={item.href}
             className={({ isActive }) =>
               cn(
-                'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200',
+                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
                 isActive
-                  ? 'bg-primary-500/10 text-primary-400 border border-primary-500/20'
-                  : 'text-text-secondary hover:bg-surface hover:text-text-primary'
+                  ? "bg-primary-500/10 text-primary-400 border border-primary-500/20"
+                  : "text-text-secondary hover:bg-surface hover:text-text-primary",
               )
             }
           >
             {({ isActive }) => (
               <>
-                <item.icon className={cn('w-5 h-5', isActive && 'text-primary-400')} />
+                <item.icon
+                  className={cn("w-5 h-5", isActive && "text-primary-400")}
+                />
                 {item.name}
               </>
             )}
@@ -66,5 +68,5 @@ export default function Sidebar() {
         </NavLink>
       </div>
     </aside>
-  )
+  );
 }

@@ -1,22 +1,22 @@
-import { type ClassValue, clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function formatDate(date: Date | string): string {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  })
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 }
 
 export function formatNumber(num: number): string {
-  return new Intl.NumberFormat('en-US').format(num)
+  return new Intl.NumberFormat("en-US").format(num);
 }
 
 export function formatPercentage(value: number): string {
-  return `${(value * 100).toFixed(1)}%`
+  return `${(value * 100).toFixed(1)}%`;
 }

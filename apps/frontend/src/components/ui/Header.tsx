@@ -1,10 +1,10 @@
-import { useAuth0 } from '@auth0/auth0-react'
-import { Search, Bell, User, LogOut } from 'lucide-react'
-import { useState } from 'react'
+import { useAuth0 } from "@auth0/auth0-react";
+import { Search, Bell, User, LogOut } from "lucide-react";
+import { useState } from "react";
 
 export default function Header() {
-  const { user, logout } = useAuth0()
-  const [showUserMenu, setShowUserMenu] = useState(false)
+  const { user, logout } = useAuth0();
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   return (
     <header className="h-16 bg-background-secondary border-b border-border flex items-center justify-between px-6">
@@ -35,14 +35,20 @@ export default function Header() {
             className="flex items-center gap-3 p-2 rounded-lg hover:bg-surface transition-colors"
           >
             {user?.picture ? (
-              <img src={user.picture} alt={user.name} className="w-8 h-8 rounded-full" />
+              <img
+                src={user.picture}
+                alt={user.name}
+                className="w-8 h-8 rounded-full"
+              />
             ) : (
               <div className="w-8 h-8 rounded-full bg-primary-500/20 flex items-center justify-center">
                 <User className="w-4 h-4 text-primary-400" />
               </div>
             )}
             <div className="text-left hidden lg:block">
-              <p className="text-sm font-medium text-text-primary">{user?.name}</p>
+              <p className="text-sm font-medium text-text-primary">
+                {user?.name}
+              </p>
               <p className="text-xs text-text-tertiary">Administrator</p>
             </div>
           </button>
@@ -50,7 +56,9 @@ export default function Header() {
           {showUserMenu && (
             <div className="absolute right-0 mt-2 w-48 glass-lg rounded-lg overflow-hidden z-50">
               <button
-                onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
                 className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-text-secondary hover:bg-surface hover:text-text-primary transition-colors"
               >
                 <LogOut className="w-4 h-4" />
@@ -61,5 +69,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

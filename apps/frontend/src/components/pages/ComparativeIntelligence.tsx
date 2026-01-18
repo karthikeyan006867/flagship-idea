@@ -11,8 +11,10 @@ export default function ComparativeIntelligence() {
       </div>
 
       <div className="glass p-8 rounded-xl">
-        <p className="text-text-secondary">Comparative analytics coming soon...</p>
+        <p className="text-text-secondary">
+          Comparative analytics coming soon...
+        </p>
       </div>
     </div>
-  )
+  );
 }

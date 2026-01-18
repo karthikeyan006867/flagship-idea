@@ -1,7 +1,7 @@
 export interface Decision {
   id: string;
   title: string;
-  category: 'career' | 'business' | 'policy' | 'personal';
+  category: "career" | "business" | "policy" | "personal";
   description: string;
   confidence: number;
   risk: number;
@@ -24,7 +24,7 @@ export interface DecisionContext {
 export interface Outcome {
   id: string;
   decisionId: string;
-  status: 'pending' | 'in_progress' | 'success' | 'failure' | 'mixed';
+  status: "pending" | "in_progress" | "success" | "failure" | "mixed";
   satisfactionScore: number;
   description: string;
   milestones: string[];
@@ -45,7 +45,7 @@ export interface User {
   id: string;
   email: string;
   name: string;
-  role: 'user' | 'researcher' | 'admin' | 'government' | 'corporate';
+  role: "user" | "researcher" | "admin" | "government" | "corporate";
   profile?: UserProfile;
   createdAt: Date;
 }

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 export default function LoadingScreen() {
   return (
@@ -13,12 +13,12 @@ export default function LoadingScreen() {
           <motion.div
             className="w-16 h-16 border-4 border-primary-500/20 rounded-full"
             animate={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
           <motion.div
             className="absolute inset-0 w-16 h-16 border-4 border-transparent border-t-primary-500 rounded-full"
             animate={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
         </div>
         <div className="text-center">
@@ -31,5 +31,5 @@ export default function LoadingScreen() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }

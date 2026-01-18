@@ -1,19 +1,19 @@
-import { Routes, Route } from 'react-router-dom'
-import { useAuth0 } from '@auth0/auth0-react'
-import DashboardLayout from '@components/layouts/DashboardLayout'
-import HomePage from '@components/pages/HomePage'
-import DecisionCapture from '@components/pages/DecisionCapture'
-import TimelineView from '@components/pages/TimelineView'
-import ComparativeIntelligence from '@components/pages/ComparativeIntelligence'
-import SimulationLab from '@components/pages/SimulationLab'
-import InstitutionalDashboard from '@components/pages/InstitutionalDashboard'
-import LoadingScreen from '@components/ui/LoadingScreen'
+import { Routes, Route } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import DashboardLayout from "@components/layouts/DashboardLayout";
+import HomePage from "@components/pages/HomePage";
+import DecisionCapture from "@components/pages/DecisionCapture";
+import TimelineView from "@components/pages/TimelineView";
+import ComparativeIntelligence from "@components/pages/ComparativeIntelligence";
+import SimulationLab from "@components/pages/SimulationLab";
+import InstitutionalDashboard from "@components/pages/InstitutionalDashboard";
+import LoadingScreen from "@components/ui/LoadingScreen";
 
 function App() {
-  const { isLoading } = useAuth0()
+  const { isLoading } = useAuth0();
 
   if (isLoading) {
-    return <LoadingScreen />
+    return <LoadingScreen />;
   }
 
   return (
@@ -29,7 +29,7 @@ function App() {
         </Route>
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

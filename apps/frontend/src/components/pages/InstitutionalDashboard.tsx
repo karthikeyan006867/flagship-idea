@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
 export default function InstitutionalDashboard() {
-  const { type } = useParams<{ type: string }>()
+  const { type } = useParams<{ type: string }>();
 
   return (
     <div className="space-y-6">
@@ -15,8 +15,10 @@ export default function InstitutionalDashboard() {
       </div>
 
       <div className="glass p-8 rounded-xl">
-        <p className="text-text-secondary">Institutional dashboard coming soon...</p>
+        <p className="text-text-secondary">
+          Institutional dashboard coming soon...
+        </p>
       </div>
     </div>
-  )
+  );
 }

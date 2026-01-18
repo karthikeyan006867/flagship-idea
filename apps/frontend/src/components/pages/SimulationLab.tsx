@@ -14,5 +14,5 @@ export default function SimulationLab() {
         <p className="text-text-secondary">Simulation tools coming soon...</p>
       </div>
     </div>
-  )
+  );
 }
