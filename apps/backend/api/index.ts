@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
-import { AppModule } from './app.module';
+import { AppModule } from '../src/app.module';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 
 let app: NestExpressApplication;
